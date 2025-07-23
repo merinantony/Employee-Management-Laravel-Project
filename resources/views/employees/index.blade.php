@@ -32,12 +32,14 @@
             <label>End Date</label>
             <input type="date" name="end_date" class="form-control" value="{{ request('end_date') }}">
         </div>
+<div class="col-md-3 d-flex align-items-end">
+    <div class="d-flex flex-wrap gap-2">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <a href="{{ route('employees.index') }}" class="btn btn-secondary">Reset</a>
+        <a href="{{ route('employees.export', request()->query()) }}" class="btn btn-success">Export to Excel</a>
+    </div>
+</div>
 
-        <div class="col-md-3 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary me-2">Filter</button>
-            <a href="{{ route('employees.index') }}" class="btn btn-secondary me-2">Reset</a>
-            <a href="{{ route('employees.export', request()->query()) }}" class="btn btn-success">Export to Excel</a>
-        </div>
     </form>
 
     <!-- Employee Table -->
